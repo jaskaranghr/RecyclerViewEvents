@@ -34,7 +34,7 @@ class ListAdapter(
 
         val item = dataList[position]
 
-        holder.itemBinding.tvContent.text = item
+        holder.itemBinding.tvContent.text = "$item : $holder"
 
         holder.itemBinding.root.setOnClickListener {
             itemClickListener.onItemClick(position)

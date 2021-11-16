@@ -50,8 +50,8 @@ class MainActivity : AppCompatActivity() {
             Log.d(TAG, "onItemClick: After Notifying: ${viewBinding.recyclerView.findViewHolderForAdapterPosition(position)}")
 
             viewBinding.recyclerView.postDelayed({
-                Log.d(TAG, "onItemClick: 2 seconds After Notifying: ${viewBinding.recyclerView.findViewHolderForAdapterPosition(position)}")
-            }, 2000)
+                Log.d(TAG, "onItemClick: 1 second After Notifying: ${viewBinding.recyclerView.findViewHolderForAdapterPosition(position)}")
+            }, 1000)
 
         }
     }
