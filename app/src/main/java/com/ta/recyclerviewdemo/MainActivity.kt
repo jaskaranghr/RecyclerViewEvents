@@ -1,5 +1,6 @@
 package com.ta.recyclerviewdemo
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -28,11 +29,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpRecyclerView() {
         val dataset = arrayListOf("First", "Second", "Third")
+        val layoutManager = LinearLayoutManager(this@MainActivity)
         listAdapter = ListAdapter(dataset, itemClickListener)
         viewBinding.recyclerView.apply {
-            layoutManager = LinearLayoutManager(this@MainActivity)
+            this.layoutManager = layoutManager
             adapter = listAdapter
         }
+
+        layoutManager.getChildAt(2)?.top = -100
+        layoutManager.getChildAt(2)?.invalidate()
 
         listAdapter.registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver() {
 
@@ -55,4 +60,8 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+}
+
+class CustomLayoutManager(context: Context): LinearLayoutManager(context) {
+
 }

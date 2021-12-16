@@ -36,6 +36,8 @@ class ListAdapter(
 
         holder.itemBinding.tvContent.text = "$item : $holder"
 
+        holder.itemBinding.root.setBackgroundResource(R.color.teal_700)
+
         holder.itemBinding.root.setOnClickListener {
             itemClickListener.onItemClick(position)
         }
